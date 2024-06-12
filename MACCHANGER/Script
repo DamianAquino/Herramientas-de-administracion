@@ -14,11 +14,14 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+# Apagar interfaz
 sal=$(ifconfig $interfaz down)
 echo "$sal"
 
+# Cambiar MAC
 sal=$(macchanger $interfaz -r)
 echo "MAC Cambiada."
 
+# Encender interfaz
 sal=$(ifconfig $interfaz up)
 echo "$sal"
