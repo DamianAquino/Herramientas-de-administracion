@@ -1,10 +1,12 @@
 # Para poder cambiar la direccion MAC de nuestra interfaz de red primero debemos apagar la interfaz
 # Para conocer nuestra interfaz de red ejecutaremos el comando ipconfig
 
-# Una vez conozcamos el nombre de la interfaz con el siguiente comando la apagaremos
+# Apagar la interfaz de red
 ifconfig [interfaz] down
 
-# Una vez apagada la interfaz cambiaremos la MAC a una aleatoria con el siguiente comando
+# Encender la interfaz de red
+
+# Asignar MAC aleatoria a la interfaz
 sudo macchanger [intefaz] -r
 
 # Si quisieramos cambiar la MAC por una personalizada ingresaremos el siguiente comando
