@@ -1,0 +1,29 @@
+Systemctl es una buena herramienta para la gestion de servicios como lo veremos a continuacion.
+
+_ Como iniciar un servicio como Systemctl
+
+    systemctl start <SERVICIO>
+
+_ Como detener un servicio
+
+    systemctl stop <SERVICIO>
+
+_ Restablecer un serivicio
+
+    sytemctl restart <SERVICIO>
+
+
+Habilitar y desabilitar servicios. ¿Para que sirve esto?. Esto sirve en lo casos en los que queremos que un servicio se ejecute
+cuando iniciamos nuestro sistema, o cuando queremos que no se ejecute cuando iniciamos el sistema.
+
+_ Como habilitar un servicio
+
+    systemctl enable <SERVICIO>
+
+_ Como desabilitar un servicio
+
+    systemctl disable <SERVICIO>
+
+_ Verificar si un servicio se esta ejecutando cuando arranca el sistema
+
+    systemctl is-enabled <SERVICIO>
