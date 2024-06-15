@@ -1,0 +1,37 @@
+### CONDIGURACION DE REGLAS DE DE IPTABLES
+
+# BLOQUEAR TODAS LAS ENTRADAS:________iptables -P INPUT DROP
+# BLOQUEAR TODAS LAS SALIDAS:_________iptables -P OUTPUT DROP
+
+# ACEPTAR TODAS LAS ENTRADAS:_________iptables -P INPUT ACCEPT
+# ACEPTAR TODAS LAS SALIDAS:__________iptables -P OUTPUT ACCEPT
+
+#LISTAR RELGAS: ______________________iptables -L -nv --line-numbers
+
+#ELIMINAR REGLAS: 
+	#TODAS:_______________________iptables -F
+	#INDIVIDUALES:________________iptables -D <CADENA> numero
+
+# INTERCAMBIO DE PAQUETES:
+	# NO ENVIAR:__________________iptables -A OUTPUT -d <IP> -j DROP
+	# NO RECIBIR:_________________iptables -A INPUT -s <IP> -j DROP
+
+# BLOQUEAR PUERTO:
+	# SALIDA:_____________________iptables -A OUTPUT -p tcp --sport <PUERTO> -j DROP                                           
+	# ENTRADA:____________________iptables -A INPUT  -p tcp --dport <PUERTO> -j DROP
+
+# ABRIR PUERTO:
+	# LOCALHOST:__________________iptables -A INPUT -p <protocolo> --dport <puerto> -j ACCEPT
+	# IP INDICADA:________________iptables -A INPUT -p <protocolo> -s <ip> -j ACCEPT
+
+################################### REDIRECCIONAMIENTO ###################################
+
+# REDIRIGIR TODO EL TRAFICO:
+	# iptables -t nat -A PREROUTING -p tcp --dport <puerto> -j DNAT --to-destination <ip:puerto>
+
+# REDIRIFIR TRAFICO DE IP ESPECIFICA (PERMITE ENRUTAR LA RED ENTERA CON: <IP A FILTRAR>/24):
+	iptables -t nat -A PREROUTING -p tcp -s <IP A FILTRAR> --dport <puerto> -j DNAT --to-destination <ip:puerto>
+
+# FILTRAR POR INTERFAZ DE RED
+	# iptables -t nat -A PREROUTING -p tcp -i <interfaz> --dport <puerto> -j DNAT --to-destination <ip:puerto>
+
