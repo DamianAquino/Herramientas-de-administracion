@@ -1,0 +1,24 @@
+# Para crear un servicio se debe acceder a la carpeta de alamcenamiento de archivos de configuracion de servicios por defecto de systemd
+/etc/systemd/system
+
+# El nombre del archivo debe tener la extension .service
+servicio.service
+
+# Secciones del archivo de configuracion
+
+[Unit]
+Description=<DESCRIPCION DEL SERVICIO>
+Requires=<UNIDADES DEL SISTEMA QUE DEBEN ESTAR DISPONIBLES ANTES DE INICIAR EL SERVICIO>
+After=<UNIDADES QUE DEBEN ESTAR DISPONIBLES ANTES DE INICIAR EL SISTEMA>
+Before=<UNIDADES QUE DEBEN INICIARSE DESPUES DE INICIAR EL SERVICIO>
+
+[Service]
+Type=<SIMPLE=Se-ejecuta-como-proceso-padre, Forking=Se-ejecuta-como-proceso-hijo, Oneshot=Se-ejecuta-solo-una-vez>
+ExecStart=<COMANDO QUE INICIA EL SERVICIO>
+ExecStop=<COMANDO QUE DETIENE EL SERVICIO>
+Restart=<DEFINE EL REINICIO CUANDO SE DETIENE INESPERADAMENTE>
+
+[Install]
+WantedBy=<UNIDAD DE DESTINO QUE DEBE INCLUIR EL SERVICIO>
+ALias=<ALIAS PARA ESTE SERVICIO>
+
