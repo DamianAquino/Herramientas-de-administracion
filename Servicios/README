@@ -1,2 +1,3 @@
-Systemd es el adminsitrador de servicios por defecto de los sismteas linux. En el archivo Systemd explico los pasos a seguir
-para crear un servicio y sus configuraciones.
+Los servicios en varias distribuciones de Linux se administran por defecto son Systemd. En el archivo Systemd explico 
+los pasos a seguir para crear un servicio con sus respectivas configuraciones.
+Systemctl es una herramienta que podemos usar para gestionar esos servicios.
