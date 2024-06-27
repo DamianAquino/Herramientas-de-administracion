@@ -5,6 +5,7 @@
 ifconfig [interfaz] down
 
 # Encender la interfaz de red
+ifconfig [interfaz] up
 
 # Asignar MAC aleatoria a la interfaz
 sudo macchanger [intefaz] -r
