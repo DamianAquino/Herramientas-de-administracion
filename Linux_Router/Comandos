@@ -1,1 +1,51 @@
-hds
+### INFORMACION DE LAS INTERFACES DE RED
+ip addr show
+
+### ESTADO DE LA INTERFACES DE REDE
+ip link show
+
+### TABLA ARP
+ip neigh show
+
+### ACTIVAR UNA INTERFAZ DE RED
+ip link set <IP> up
+
+### DESACTIVAR UNA INTERFAZ DE RED 
+ip link set <interfaz >down
+
+### ASIGNAR PUERTA DE ENLACE PREDETERMIANDA
+ip route add default via <IP>
+
+### VER MI PUERTA DE ENLACE PREDETERMINADA
+ip route show default
+
+
+### BORRAR LA PUERTA DE ENLACE PREDETERMINADA
+ip route del default via <IP>
+
+### ESTADO DE LA TABLA DE ENRUTAMIENTO 
+ip route show
+
+### ASIGNAR IP/RANGO DE IP'S A UNA INTERFACE
+ip addr add <IP-RANGO> dev <INTERFACE>
+
+### ELIMIAR DIRECCION DE UNA INTERFACE
+ip addr del <IP> dev <INTERFACE>
+
+### ASIGNAR ALIAS A UNA INTERFAZ DE RED
+ip addr add <IP> dev <INTERFAZ> label <ALIAS>
+	
+### AÑADIR ENTRADA A LA TABLA ARP
+ip neigh add <IP> lladdr <MAC> nud permanent dev <INTERFAZ>
+
+### QUITAR ENTRADA DE LA TABLA ARP
+ip neigh del <IP> lladdr <MAC> nud permanent dev <INTERFAZ>
+
+### AGREGAR RUTA ESTATICA A LA INTERFAZ
+ip route add <RANGO DE DIRECCIONES> via <NEXT HOP>
+
+### CAMBIAR RUTA EN LA TABLA DE ENRUTAMIENTO
+ip route chg <RANGO> via <NEXT HOP>
+
+### VER TABLA DE ENRUTAMIENTO DE UNA INTERFAZ
+ip route show dev <NOMBRE INTERFAZ>
